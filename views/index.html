@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>СТВОРЕННЯ ОПИТУВАННЯ</title>
+    
+  </head>
+  <body>
+    <button id="generate-wallet-btn">Згенерувати гаманець</button>
+    <button id="fund-btn">Поповнити гаманець</button>
+    
+    <script>
+      const generateWalletForm = document.createElement('form');
+      generateWalletForm.method = 'POST';
+      generateWalletForm.action = '/generate-wallet';
+      generateWalletForm.style.display = 'none'; // Hide the form from view
+    
+      const nameInput = document.createElement('input');
+    
+      const submitBtn = document.createElement('button');
+      submitBtn.type = 'submit';
+      submitBtn.textContent = 'Generate Wallet';
+    
+      generateWalletForm.appendChild(nameInput);
+      generateWalletForm.appendChild(submitBtn);
+      document.body.appendChild(generateWalletForm);
+    
+      const generateWalletBtn = document.getElementById('generate-wallet-btn');
+      generateWalletBtn.addEventListener('click', function() {
+        generateWalletForm.submit();
+      });
+    
+      const fundBtn = document.getElementById('fund-btn');
+      fundBtn.addEventListener('click', function() {
+        window.location.href = '/fund.html'; 
+      });
+    </script>
+    </body>
+</html>

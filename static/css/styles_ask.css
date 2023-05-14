@@ -1,0 +1,136 @@
+/*######################
+BODY STYLE
+######################*/
+
+body{
+    background-color: #d3d3d3;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+/*######################
+HEADTEXT STYLE
+######################*/
+
+.headtext{
+    color: white; /*#737373*/
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.texto_size25{
+    font-size:25px;
+}
+/*######################
+MAINFORM STYLE
+######################*/
+
+#mainForm{
+    margin: 0 auto; 
+    width: 500px;
+    
+}
+
+/*######################
+ASK-DIV STYLE
+######################*/
+
+.ask-div { 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*######################
+MAIN-DIV STYLE
+######################*/
+
+.main-div {
+    position: relative;
+    /*height: 650px;*/
+    height: auto;
+    width: 700px;
+    margin: auto;
+    padding: 30px 30px;
+    background: url(https://picsum.photos/id/1004/5616/3744) no-repeat center center #505050;
+    background-size: cover;
+    box-shadow: 0px 30px 60px -5px #000;
+  }
+
+/*######################
+RECORD-BUTTON STYLE
+######################*/
+
+.record-button{
+    background-color: #737373;
+    border: none;
+    color: #505050;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 25%;
+
+    transition: 0.5s linear;
+}
+
+.record-button:hover {
+    background: #4082f5;
+    box-shadow: 0px 4px 35px -5px #4082f5;
+    cursor: pointer;
+  }
+  
+  .record-button:focus {
+    outline: none;
+  }
+/*######################
+SUBMIT STYLE
+######################*/
+
+#submit{
+    background-color: #737373;
+    border: none;
+    color: #505050;
+    padding: 15px 15px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 85%;
+}
+
+/*######################
+IMG STYLE
+######################*/
+img {
+    width: 300px;
+    transition: 0.5s linear;
+    box-shadow: 3px 6px 25px -5px black;
+}
+
+/* --// VlaGan: підсвітка зображень на хінт */
+.img:hover{
+    box-shadow: 0px 4px 35px -5px #1161ed;
+}
+.img:focus{
+    outline: none;
+}
+
+
+/* //-- VlaGan: підкреслення тексту */
+.active {
+    border-bottom: 2px solid #1161ed;
+}

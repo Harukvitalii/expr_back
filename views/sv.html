@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>СТВОРЕННЯ ОПИТУВАННЯ</title>
+  </head>
+  <body>
+    <div class="create_poll_back">
+      <h1 class="active texto_center">СТВОРЕННЯ ОПИТУВАННЯ</h1>
+      <div class="texto_center texto_size12">
+        <h3>Збережіть перед створенням!</h3>
+        <h3>Код для проходження: {{passw}}</h3>
+        <!--<h3>Код для видалення: {{del_passw}}</h3>-->
+      </div>
+      <form method="POST" action="{{ url_for('create2', passw=passw, del_passw=del_passw) }}">
+        <script>
+          for (let i = 1; i <= 5; i++) {
+            document.write(`
+              <input type="url" maxlength="256" class="text" name="link${i}">
+              <span>Посилання на картинку №${i}</span>
+              <br>
+            `);
+          }
+        </script>
+        <input class="signin" type="submit" value="Створити опитування">
+        <hr>
+      </form>
+      <a class="texto_to_create" href="{{url_for('index')}}">Вже маєте опитування? Долучитись.</a>
+    </div>
+  </body>
+</html>

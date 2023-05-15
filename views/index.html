@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>СТВОРЕННЯ ОПИТУВАННЯ</title>
+    <title>KXN COIN</title>
     
   </head>
   <body>
     <button id="generate-wallet-btn">Згенерувати гаманець</button>
     <button id="fund-btn">Поповнити гаманець</button>
+    <button id="sc-name-btn">Взнати імя токена</button>
+
     
     <script>
       const generateWalletForm = document.createElement('form');
@@ -32,6 +34,23 @@
       const fundBtn = document.getElementById('fund-btn');
       fundBtn.addEventListener('click', function() {
         window.location.href = '/fund.html'; 
+      });
+
+      const scNameForm = document.createElement('form');
+      scNameForm.method = 'POST';
+      scNameForm.action = '/sc-name';
+      scNameForm.style.display = 'none'; // Hide the form from view
+    
+      const scSubmitBtn = document.createElement('button');
+      scSubmitBtn.type = 'submit';
+      scSubmitBtn.textContent = 'Know name';
+    
+      generateWalletForm.appendChild(scSubmitBtn);
+      document.body.appendChild(scNameForm);
+    
+      const scNameBtn = document.getElementById('sc-name-btn');
+      scNameBtn.addEventListener('click', function() {
+        scNameForm.submit();
       });
     </script>
     </body>

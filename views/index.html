@@ -8,6 +8,8 @@
     <button id="generate-wallet-btn">Згенерувати гаманець</button>
     <button id="fund-btn">Поповнити гаманець</button>
     <button id="sc-name-btn">Взнати імя токена</button>
+    <button id="sc-claim-btn">Заклеймити токени KXN</button>
+
 
     
     <script>
@@ -52,6 +54,11 @@
       scNameBtn.addEventListener('click', function() {
         scNameForm.submit();
       });
+
+      const claimBtn = document.getElementById('sc-claim-btn');
+      claimBtn.addEventListener('click', function() {
+        window.location.href = '/claim.html'; 
+      });sc-nam
     </script>
     </body>
 </html>

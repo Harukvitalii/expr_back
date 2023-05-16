@@ -127,11 +127,44 @@ app.post('/sc-name', (req, res) => {
   .catch(error => {
       console.log(error)
   })
-
- 
 });
+
+
+app.post('/claim-tokens', (req, res) => {
+  const scName = null;
+
+  const clientWallet = req.body.walletAddress;
+  const walletPrivate = req.body.walletPrivate;
+  const amountOfTokens = req.body.amountOfTokens;
+  const data = contract.methods.claimTokens(amountOfTokens).encodeABI();
+
+  contract.methods.name().call()
+  .then(result => {
+      console.log('Res: ', result)
+      scName = result;
+  })
+  .catch(error => {
+      console.log(error)
+  })
+
+  web3.eth.accounts.signTransaction({
+      to: contractAddress,
+      data: data,
+      gas: 200000,
+      gasPrice: '30000000000',
+  }, walletPrivate)
+  .then(signedTx => {
+      web3.eth.sendSignedTransaction(signedTx.rawTransaction)
+      .on('transactionHash', (hash) => {
+        console.log("Transaction hash: " + hash);
+        res.send(`<script>alert('Tokens ${scName} ${amountOfTokens} was claimed ${hash}'); window.location.href='/claim.html';</script>`);
+      })
+  });
+});
+
 
 
 app.listen(3333, () => {
 console.log('Server started on port http://127.0.0.1:3333/');
 });
+

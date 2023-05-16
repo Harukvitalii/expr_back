@@ -1,0 +1,24 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Claim</title>
+  </head>
+  <body>
+    <h1>Claim</h1>
+    <form method="POST" action="/claim-tokens">
+        <label>
+          Адрес Кошелька<br>
+          <input type="text" name="walletAddress"><br>
+          Проиватний ключ (для тестів, не передавайте свій основний приватний ключ)<br>
+          <input type="text" name="walletPrivate"><br>
+          Кількість токенів (до 10000)<br>
+          <input type="text" name="amountOfTokens"><br>
+        </label>
+        <br>
+        <button type="submit">Заклеймити</button>
+      </form>
+  </body>
+</html>
